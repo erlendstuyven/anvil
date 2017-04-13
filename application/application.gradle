@@ -1,7 +1,9 @@
-apply plugin: 'java'
+//apply plugin: 'java'
 //apply plugin: 'org.springframework.boot'
 
 dependencies {
-   compile 'junit:junit:3.8.1'
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

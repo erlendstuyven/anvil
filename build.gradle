@@ -10,24 +10,12 @@ buildscript {
 	}
 }
 
-//
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+allprojects {
+    repositories {
+        mavenCentral() // All projects uses mavencentral for resolving their dependencies
+    }
 }
 
-dependencies {
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-}
-
-//
 subprojects {
 
     apply plugin: 'java' // recognize java folders
@@ -44,18 +32,12 @@ subprojects {
         }
 
         dependencies {
-            dependency 'org.ow2.asm:asm:5.0.4'
-            dependency 'org.codehaus.woodstox:woodstox-core-asl:4.4.1'
-            dependency 'org.apache.santuario:xmlsec:2.0.6'
-            dependency 'org.bouncycastle:bcprov-jdk15on:1.55'
             dependency 'org.liquibase:liquibase-core:3.5.0'
         }
     }
 
 
 }
-
-////
 
 
 
