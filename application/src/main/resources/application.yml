@@ -11,7 +11,7 @@ spring:
         driverClassName: org.postgresql.Driver
     datasource:
         platform: postgres
-        url: jdbc:postgresql://tdvgp1.kindengezin.be:5434/tgp
+        url: jdbc:postgresql://anvil:5434/tgp
         tomcat:
             max-active: 10
             initial-size: 5
