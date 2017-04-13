@@ -1,0 +1,38 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+subprojects {
+
+    apply plugin: 'java' // recognize java folders
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencyManagement {
+        applyMavenExclusions false
+
+        imports {
+            mavenBom 'io.spring.platform:platform-bom:Athens-SR2'
+        }
+
+        dependencies {
+            dependency 'org.ow2.asm:asm:5.0.4'
+            dependency 'org.codehaus.woodstox:woodstox-core-asl:4.4.1'
+            dependency 'org.apache.santuario:xmlsec:2.0.6'
+            dependency 'org.bouncycastle:bcprov-jdk15on:1.55'
+            dependency 'org.liquibase:liquibase-core:3.5.0'
+        }
+    }
+
+
+}

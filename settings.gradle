@@ -1,0 +1,12 @@
+rootProject.name = 'anvil'
+
+include 'application'
+include 'application-service'
+include 'infrastructure'
+include 'domain'
+
+rootProject.children.each {project ->
+    project.buildFileName = project.name + ".gradle"
+}
+
+
