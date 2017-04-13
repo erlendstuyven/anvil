@@ -1,0 +1,43 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="kindengezin">
+        <createSequence sequenceName="seq_rekeningnummers"
+                        startValue="1"
+                        incrementBy="1"/>
+
+        <createTable tableName="rekeningnummers">
+            <column name="rekeningnummer_id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="iban" type="char(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="insz" type="char(11)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="voornaam" type="char(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="achternaam" type="char(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="geboortedag" type="int">
+            </column>
+            <column name="geboortemaand" type="int">
+            </column>
+            <column name="geboortejaar" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fonds" type="char(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dossiernummer" type="char(18)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,22 @@
+---
+spring:
+    h2:
+        console.enabled: true
+    jpa:
+        database: POSTGRESQL
+        show-sql: false
+        hibernate:
+            ddl-auto: none
+    database:
+        driverClassName: org.postgresql.Driver
+    datasource:
+        platform: postgres
+        url: jdbc:postgresql://tdvgp1.kindengezin.be:5434/tgp
+        tomcat:
+            max-active: 10
+            initial-size: 5
+            test-on-borrow: true
+            validation-query: select 1
+
+liquibase:
+  default-schema: ANVIL

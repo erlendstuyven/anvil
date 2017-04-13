@@ -1,0 +1,7 @@
+apply plugin: 'java'
+//apply plugin: 'org.springframework.boot'
+
+dependencies {
+   compile 'junit:junit:3.8.1'
+}
+
