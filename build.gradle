@@ -1,5 +1,6 @@
 buildscript {
 	ext {
+        //variables
 		springBootVersion = '1.5.2.RELEASE'
 	}
 	repositories {
@@ -10,12 +11,6 @@ buildscript {
 	}
 }
 
-allprojects {
-    repositories {
-        mavenCentral() // All projects uses mavencentral for resolving their dependencies
-    }
-}
-
 subprojects {
 
     apply plugin: 'java' // recognize java folders
@@ -24,14 +19,21 @@ subprojects {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
+
+    repositories {
+        mavenCentral() // All projects are using mavencentral for resolving their dependencies
+    }
+
     dependencyManagement {
         applyMavenExclusions false
 
         imports {
+            // imports a whole bunch of spring libraries
             mavenBom 'io.spring.platform:platform-bom:Athens-SR2'
         }
 
         dependencies {
+            // defines version of libraries but do not import them
             dependency 'org.liquibase:liquibase-core:3.5.0'
         }
     }
