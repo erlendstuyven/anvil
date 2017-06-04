@@ -3,6 +3,8 @@ dependencies {
     compile 'org.postgresql:postgresql:9.4.1209'
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.1-m07'
+
     
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
