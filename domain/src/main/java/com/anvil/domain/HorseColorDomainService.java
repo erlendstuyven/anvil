@@ -18,12 +18,11 @@ public class HorseColorDomainService {
     }
 
     public Color getHorseColor(HorseType horseType) {
-        Color color = horseColorSpecifications.stream()
+        return horseColorSpecifications.stream()
                 .filter(horseColorSpecification -> horseColorSpecification.isSatisfied(horseType))
                 .findFirst()
                 .map(horseColorSpecification -> horseColorSpecification.getColor(horseType))
                 .get();
-        return color;
     }
 
     public List<Color> getHorseColors(HorseType horseType) {
